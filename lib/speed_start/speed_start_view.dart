@@ -10,8 +10,8 @@ class SpeedStartView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.mante.value
-              ? const CircularProgressIndicator(color: Colors.blue)
+          () => controller.crona.value
+              ? const CircularProgressIndicator(color: Colors.white)
               : buildError(),
         ),
       ),
@@ -25,7 +25,7 @@ class SpeedStartView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.ibsdqm();
+              controller.ghckvf();
             },
             icon: const Icon(
               Icons.restart_alt,

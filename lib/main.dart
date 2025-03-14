@@ -8,7 +8,10 @@ import 'package:travel_speed/speed_records/speed_records_binding.dart';
 import 'package:travel_speed/speed_records/speed_records_view.dart';
 import 'package:travel_speed/speed_setting/speed_setting_binding.dart';
 import 'package:travel_speed/speed_setting/speed_setting_view.dart';
+import 'package:travel_speed/speed_start/speed_start_binding.dart';
+import 'package:travel_speed/speed_start/speed_start_view.dart';
 
+import 'db_speed/speed_config.dart';
 import 'no_network/no_network_binding.dart';
 import 'no_network/no_network_view.dart';
 
@@ -33,7 +36,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Speeds,
-      initialRoute: '/speedMainPage',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -85,8 +88,10 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Speeds = [
+  GetPage(name: '/', page: () => const SpeedStartView(), binding: SpeedStartBinding()),
   GetPage(name: '/noNetworkPage', page: () => NoNetworkPage(), binding: NoNetworkBinding()),
   GetPage(name: '/speedMainPage', page: () => const SpeedMainPage(), binding: SpeedMainBinding()),
+  GetPage(name: '/configInit', page: () => const SpeedConfig()),
   GetPage(name: '/speedRecordsPage', page: () => SpeedRecordsPage(), binding: SpeedRecordsBinding()),
   GetPage(name: '/speedSettingPage', page: () => SpeedSettingPage(), binding: SpeedSettingBinding()),
 ];

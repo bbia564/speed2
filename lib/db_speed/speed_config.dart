@@ -23,7 +23,7 @@ class SpeedConfig extends GetView<PageLogic>{
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.cmrat.value)),
+              url: WebUri.uri(Uri.parse(controller.ybclxri.value)),
             ),
             onWebViewCreated: (c) {
               controller.webViewController = c;
